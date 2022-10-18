@@ -8,7 +8,7 @@ puts "Bonjour et bienvenu dans le jeu du poo poo !"
 puts ""
 
 
-#def intro() #player definition
+ #player definition
     puts "Présentation du joueur 1 :"
     print "> "
     player1 = Player.new("Josiane")
@@ -32,12 +32,12 @@ puts ""
     puts "Passons à la phase d'attaque :"
     puts ""  
     while player1.life_points >= 0 and player2.life_points >= 0
-        if player1.life_points >= 0 or player2.life_points >= 0
+        if player1.life_points >= 0 or player2.life_points >=0
             sleep(0.5)
             puts player1.attacks(player2)
             sleep(0.5)
             puts ""
-            if player1.life_points >=0
+            if player1.life_points >0
                 puts player2.show_state
                 sleep(0.5)
                 puts ""
