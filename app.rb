@@ -31,7 +31,7 @@ puts ""
     puts ""
     puts "Passons à la phase d'attaque :"
     puts ""  
-    while player1.life_points >= 0 and player2.life_points >= 0
+    while player1.life_points > 0 and player2.life_points > 0
         if player1.life_points >= 0 or player2.life_points >=0
             sleep(0.5)
             puts player1.attacks(player2)
