@@ -10,16 +10,29 @@ class Player
         @life_points = life_points
     end
 
-    def show_state(name, life_points) #Showing player's life_points
-        #@@all_players.each do |player|
-        puts "#{name} a #{life_points} de vie"
-        #end
+    def show_state () #Showing player's life_points
+        if life_points > 0
+            puts "#{name} a #{life_points} points de vie"
+        else
+            puts "#{name} est mort !"
+        end
     end
 
     def gets_damage()
+        damage = 5
+        @life_points = @life_points - damage
+        if @life_points <= 0
+            puts "Le joueur #{name} a été tué !"
+        end
     end
 
-    def attacks()
+    def attacks(name)
+        puts
+        puts "Le joueur #{self.player} attaque le joueur #{@name}."
+    end
+
+    def compute_damage
+        return rand(1..6)
     end
 end
 
