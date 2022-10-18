@@ -10,7 +10,7 @@ class Player
         @life_points = life_points
     end
 
-    def show_state () #Showing player's life_points
+    def show_state  #Showing player's life_points
         if life_points > 0
             puts "#{name} a #{life_points} points de vie"
         else
@@ -18,8 +18,7 @@ class Player
         end
     end
 
-    def gets_damage()
-        damage = 5
+    def gets_damage(damage)
         @life_points = @life_points - damage
         if @life_points <= 0
             puts "Le joueur #{name} a été tué !"
@@ -27,8 +26,10 @@ class Player
     end
 
     def attacks(name)
-        puts
-        puts "Le joueur #{self.player} attaque le joueur #{@name}."
+        puts "Le joueur #{self.name} attaque le joueur #{name.name}."
+        damage = compute_damage
+        puts "Il lui inflige #{damage} points de dommages."
+        puts name.gets_damage(damage)
     end
 
     def compute_damage
@@ -36,4 +37,4 @@ class Player
     end
 end
 
-binding.pry
+#bending pry
